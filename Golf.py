@@ -1,14 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import style
-style.use('ggplot')
+
+score_list = pd.Series([49, 44, 46, 42, 48, 45, 44, 45, 42, 43, 47, 41])
+putt_list = pd.Series([17, 17, 16, 18, 19, 17, 16, 16, 16, 15, 18, 17])
+chip_list = pd.Series([17, 7, 11, 8, 11, 8, 14, 10, 13, 14, 14, 6])
+fir_list = pd.Series([3, 2, 3, 2, 2, 2, 2, 2, 3, 2, 1, 4])
+gir_list = pd.Series([0, 2, 1, 3, 0, 1, 0, 2, 2, 2, 0, 3])
 
 golf_stats_total_9 = {
-    'Score': [49, 44, 46, 42, 48, 45, 44, 45, 42, 43, 47, 41],
-    'Putts': [17, 17, 16, 18, 19, 17, 16, 16, 16, 15, 18, 17],
-    'Chips': [17, 7, 11, 8, 11, 8, 14, 10, 13, 14, 14, 6],
-    'FIR': [3, 2, 3, 2, 2, 2, 2, 2, 3, 2, 1, 4],
-    "GIR": [0, 2, 1, 3, 0, 1, 0, 2, 2, 2, 0, 3]
+    'Score': score_list,
+    'Putts': putt_list,
+    'Chips': chip_list,
+    'FIR': fir_list,
+    "GIR": gir_list
 }
 golf_stats_total_18 = {
     'Score': [92, 90],
@@ -58,6 +62,7 @@ def holes9putt():
     print(df9)
     plt.show()
 
+
 def holes9chip():
     plt.scatter(df9['Score'], df9['Chips'])
     plt.title('Score vs Chips')
@@ -86,4 +91,3 @@ def holes9gir():
 
 
 welcome()
-#holes9chip()
